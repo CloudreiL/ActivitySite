@@ -1,0 +1,72 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="img/list.png"/>
+    <title>Уберарт</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="main">
+        <div class="toolbar">
+            <div class="bien-glass"></div>
+            <div class="bien-glass-edge"></div>
+            <div class="title_and_icon">
+                <img class="list_icon" src="img/list.png"/>
+                <h2 class="title">Уберарт</h2>
+            </div>
+            <div class="toolbar_buttons">
+                <button class="logBtn" id="logBtn">Войти</button>
+                <button class="regBtn" id="regBtn">Регистрация</button>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h1 class="slide-text1">Оставьте свой заказ одним кликом</h1>
+                    <img src="img/medium-shot-people-shaking-hands-at-work.jpg" class="img_1">
+                    <button class="overlay-button1">Оставить заказ</button>
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/multiracial-group-of-coworkers-attracting-attention.jpg" class="img_2">
+                    <button class="overlay-button2">Взяться за заказ</button>
+                    <h1 class="slide-text2">Начни выполнять заказы прямо сейчас</h1>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <div class="info">
+            <img class="phone" src="img/phone.png"/>
+            <h3>+7 (111) 111-11-11</h3>
+            <img class="map" src="img/map.png"/>
+            <h3>Улица Пушкина, дом Колотушкина</h3>
+            <a class="icon" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img class="telegram" src="img/telegram.png"/></a>
+            <a class="icon" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img class="vk" src="img/vk.png"/></a>
+        </div>
+    </div> 
+
+    <script src="main.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            navigation:{
+                nextEl:".swiper-button-next",
+                prevEl:".swiper-button-prev",
+            },
+            pagination:{
+                el:".swiper-pagination",
+            },
+            mousewhell:true,
+            keyboard:true,
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="registration_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="../img/list.png" />
+</head>
+<body>
+
+    <div class="login">
+        <h1>Регистрация</h1>
+     
+            <div class="input">
+                <input type="text" placeholder="Логин" class="loginn" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input">
+                <input type="password" placeholder="Пароль"  class="password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+            <div class="input-checkbox">
+                <input type="checkbox" id="executorCheckbox">
+                <label for="executorCheckbox">Я исполнитель</label>
+            </div>
+        
+            <div class="input-checkbox">
+                <input type="checkbox" id="customerCheckbox">
+                <label for="customerCheckbox">Я заказчик</label>
+            </div>
+
+            <button type="button" class="RegBtn">Зарегистрироваться</button>
+            <div class="register">
+                <a class="LogBtn">Уже есть аккаунт?</a>
+            </div>
+       
+    </div>
+    <script src="reg.js"></script>
+</body>
+</html>

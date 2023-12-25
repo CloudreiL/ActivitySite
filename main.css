@@ -1,0 +1,296 @@
+@font-face {
+	font-family: 'GoogleSans'; 
+	src: url(fonts/GoogleSansText-Regular.ttf); 
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'GoogleSans';
+    background: url(img/background.jpg) no-repeat;
+    background-color: #01050c;
+    margin: 0;
+    background-position: center;
+}
+
+.bien-glass {
+    position: absolute;
+    inset: 0;
+    /*   Extend the backdrop to the bottom for it to "collect the light" outside of the nav */
+    --extended-by: 100px;
+    bottom: calc(-1 * var(--extended-by));
+  
+    --filter: blur(30px);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    pointer-events: none;
+  
+    /*   Cut the part of the backdrop that falls outside of <nav /> */
+    --cutoff: calc(100% - var(--extended-by));
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0,
+      black var(--cutoff),
+      transparent var(--cutoff)
+    );
+}
+
+.bien-glass-edge {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+  
+    --extended-by: 80px;
+    --offset: 20px;
+    --thickness: 2px;
+    height: calc(var(--extended-by) + var(--offset));
+    /*   Offset is used to snuck the border backdrop slightly under the main backdrop for  smoother effect */
+    top: calc(100% - var(--offset) + var(--thickness));
+  
+    /*   Make the blur bigger so that the light bleed effect spreads wider than blur on the first backdrop */
+    /*   Increase saturation and brightness to fake smooth chamfered edge reflections */
+    --filter: blur(90px) saturate(160%) brightness(1.3);
+    -webkit-backdrop-filter: var(--filter);
+    backdrop-filter: var(--filter);
+    pointer-events: none;
+  
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0,
+      black var(--offset),
+      transparent var(--offset)
+    );
+}
+
+.bien-glass .bien-glass-edge {
+    pointer-events: none;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Используйте space-between для размещения элементов справа */
+    background-color: #0000007c;
+    z-index: 6;
+    position: fixed;
+    top: 0; /* Используйте 0, чтобы прикрепить панель инструментов к верху */
+    padding: 20px;
+    width: 100%; /* Занимайте всю ширину */
+    box-sizing: border-box; /* Учтите padding в расчетах ширины */
+}
+.list_icon {
+    filter: blur(0);
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+}
+
+.title {
+    z-index: 2;
+    filter: blur(0);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 5px #000000;
+}
+
+
+.logBtn {
+    filter:blur(0);
+    background-color: white;
+    border-radius: 100px;
+    color: black;
+    padding: 10px;
+    width: 100px;
+    border: 1px white;
+    cursor: pointer;
+}
+
+.regBtn{
+    filter:blur(0);
+    background-color: white;
+    border-radius: 100px;
+    color: black;
+    padding: 10px;
+    width: 100px;
+    border: 1px white;
+    cursor: pointer;
+}
+
+.logBtn:hover{
+    background: #a5c0fb;
+    transition: .4s background ease;
+}
+
+.regBtn:hover{
+    background: #a5c0fb;
+    transition: .4s background ease;
+}
+
+.toolbar_buttons {
+    display: flex;
+    gap: 10px; /* Добавьте немного промежутка между кнопками */
+}
+
+.title_and_icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+.overlay-button2 {
+    position: absolute;
+    background-color: #a5c0fb;
+    border-radius: 100px;
+    color: white;
+    padding: 10px;
+    width: 280px;
+    border: 1px white;
+    cursor: pointer;
+    font-size: 30px;
+    left: 50%;
+    top: 20%; /* Уменьшено значение top */
+    transform: translate(-50%, -50%);
+}
+
+.overlay-button1 {
+    position: absolute;
+    background-color: #a5c0fb;
+    border-radius: 100px;
+    color: white;
+    padding: 10px;
+    width: 280px;
+    border: 1px white;
+    cursor: pointer;
+    font-size: 30px;
+    left: 26%;
+    top: 38%; 
+    transform: translate(-50%, -50%);
+}
+
+.overlay-button2:hover {
+    background: #65769a;
+    color:white;
+    transition: 0.4s background ease;
+}
+
+.overlay-button1:hover {
+    background: #65769a;
+    color:white;
+    transition: 0.4s background ease;
+}
+
+.swiper {
+    width: 1000px;
+    height: 100%;
+    background: transparent;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 150px;
+    position: relative; /* Добавлено для корректного позиционирования кнопки и текста */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.slide-text2 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    top: 59%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0000007c;
+    color: #fff;
+    padding: 50px;
+    width: 80%;
+
+    border-bottom-left-radius: 20px; /* Закругление только нижнего левого угла */
+    border-bottom-right-radius: 20px; /* Закругление только нижнего правого угла */
+}
+
+
+.slide-text1 {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+
+    top: 20%; 
+    left: 25.92%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #0000007c;
+    padding: 90px;
+    width: 20%;
+
+    border-radius:  20px; /* Закругление только нижнего левого угла */
+    
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+    right:250px !important;
+    left:auto;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+    left:250px !important;
+    right:auto;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    background: blur;
+    border:solid white;
+
+    color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.telegram {
+    width: 30px;
+    height: 30px;
+}
+.vk {
+    padding-right: 100px;
+    width: 30px;
+    height: 30px;
+}
+.phone {
+    padding-left: 100px;
+    width: 30px;
+    height: 30px;
+}
+.map {
+    padding: 14px 0px 14px 14px;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+
